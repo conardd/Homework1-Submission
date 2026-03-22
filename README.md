@@ -162,8 +162,8 @@ ollama run llama3.2:3b "Hello, test!"
 # Open VS Code
 code .
 
-# Open homework1.ipynb
-# VS Code will prompt to select a kernel - choose your venv
+# Open notebooks/00_setup_verification.ipynb first
+# VS Code will prompt to select a kernel - choose your virtual environment
 ```
 
 #### Option B: Cursor IDE (Recommended)
@@ -171,8 +171,8 @@ code .
 # Open Cursor
 cursor .
 
-# Open homework1.ipynb
-# Select kernel: Python Environments → venv
+# Open notebooks/00_setup_verification.ipynb first
+# Select kernel: Python Environments → your virtual environment
 ```
 
 
@@ -181,7 +181,7 @@ cursor .
 ## 📁 Repository Structure
 
 ```
-Homework1-submission/
+Homework1-Submission/
 ├── README.md
 ├── requirements.txt
 ├── .env.example
@@ -202,25 +202,27 @@ Homework1-submission/
 │   ├── __init__.py
 │   ├── llm_client.py                     # LLMClient class
 │   ├── cost_tracker.py                   # CostTracker class
+│   ├── config.py                         # Env/config helpers
 │   ├── prompt_templates.py               # CO-STAR templates
 │   └── utils.py                          # Helper functions
 │
-├── outputs/                               # Student deliverables
-│   ├── project_proposal.md
-│   ├── limitations_log.md
-│   └── resource_analysis.md
-│
-└── docs/
-    ├── path_a_setup.md
-    ├── path_b_setup.md
-    └── quick_start_guide.md
+└── outputs/                               # Student deliverables/artifacts
+    ├── path_selection.md
+    ├── setup_summary.txt
+    ├── my_costar_template.json
+    ├── my_architecture.md
+    ├── my_project_definition.md
+    ├── project_definition_template.md
+    ├── architecture_guide.md
+    ├── project_checklist.md
+    └── homework_reflection.md
 ```
 
 ---
 
 ## 📓 Assignment Structure
 
-The homework is organized into 8 sections within the pre-configured Jupyter notebook (`homework1.ipynb`):
+The homework is organized into 8 sections delivered across the notebook sequence in `notebooks/` (run in order from `00` to `08`):
 
 ### Section 1: Environment Setup & Tool Selection (30 min)
 - Choose deployment path (Claude/Ollama/Hybrid)
@@ -341,28 +343,24 @@ If using Cursor IDE, you can:
 
 ## 📝 Deliverables
 
-### Required Files (in `outputs/` directory)
+### What Students Must Do
 
-1. **All 9 completed notebooks** (in `notebooks/`)
-   - All code cells executed
-   - All TODO sections complete
-   - Observations documented
+1. **Complete all notebooks in `notebooks/` (`00` through `08`)**
+   - Run all code cells
+   - Complete TODO sections
+   - Review markdown instructions and outputs
 
-2. **Project Proposal** (`outputs/project_proposal.md`)
-   - One-sentence mission statement
-   - Agent description (2-3 paragraphs)
-   - Model selection justification
-   - Success criteria
+2. **Generate final reflection artifacts in `outputs/`**
+   - `outputs/homework_reflection.md` (primary graded artifact)
+   - `outputs/my_project_definition.md` (project definition artifact)
+   - The notebook workflow should auto-generate the reflection draft; students should review and polish before submission.
 
-3. **Limitations Log** (`outputs/limitations_log.md`)
-   - Minimum 3-5 documented cases
-   - Model name, prompt, expected/actual behavior
-   - Hypotheses and improvement ideas
+### What Students Submit to Canvas
 
-4. **Resource Analysis** (`outputs/resource_analysis.md`)
-   - Path selection rationale
-   - Cost estimates or hardware notes
-   - Deployment strategy
+- `outputs/homework_reflection.md`
+- `outputs/my_project_definition.md`
+
+Other files in `outputs/` can support the workflow, but they are **not required Canvas submissions**.
 
 ---
 
@@ -372,10 +370,9 @@ Your submission will be considered complete when:
 
 - ✅ All 9 notebooks completed and executed without errors
 - ✅ All TODO sections filled in
-- ✅ All 4 deliverable files created in `outputs/`
-- ✅ Working agent prototype built
-- ✅ Cost tracker shows your API usage
-- ✅ Reflections written in markdown cells
+- ✅ `outputs/homework_reflection.md` is generated and polished
+- ✅ `outputs/my_project_definition.md` is completed
+- ✅ Both required files are submitted to Canvas
 
 ---
 
@@ -383,13 +380,9 @@ Your submission will be considered complete when:
 
 | Component | Weight | Criteria |
 |-----------|--------|----------|
-| Notebook Completion | 30% | All 9 notebooks completed, code runs |
-| CO-STAR Implementation | 15% | Demonstrates all 6 components |
-| Structured Outputs | 10% | Reliable JSON/XML generation |
-| Model Comparison | 10% | Thoughtful analysis |
-| Project Proposal | 15% | Clear, feasible, justified |
-| Limitations Log | 10% | Insightful observations |
-| Documentation | 10% | Clear markdown, reflections |
+| Homework Reflection (`outputs/homework_reflection.md`) | 70% | Depth of insight, evidence from notebook runs, clarity of reasoning |
+| Project Definition (`outputs/my_project_definition.md`) | 20% | Clear scope, feasibility, and alignment with reflection findings |
+| Notebook Completion Check | 10% | All notebooks run end-to-end with completed TODOs |
 | **Total** | **100%** | |
 
 ### Grading Scale
@@ -449,7 +442,8 @@ cursor .  # Cursor IDE
 # or
 jupyter lab  # Traditional Jupyter
 
-# 6. Open homework1.ipynb and start working!
+# 6. Open notebooks/00_setup_verification.ipynb and start working!
+# Then continue through notebooks/01...08 in order
 ```
 
 ### Detailed Workflow
@@ -471,18 +465,20 @@ jupyter lab  # Traditional Jupyter
 
 4. **Project Kickoff** (30 min)
    - Complete Section 8
-   - Write project proposal
+   - Draft your project definition
    - Build initial prototype
 
 5. **Documentation** (20 min)
-   - Complete limitations log
-   - Write resource analysis
-   - Review and polish all deliverables
+   - Use the notebook's final automation flow to generate `outputs/homework_reflection.md`
+   - Finalize `outputs/my_project_definition.md`
+   - Review and polish both Canvas submission files
 
 6. **Submit** (5 min)
-   - Verify all files in `outputs/` directory
+   - Verify the two required files are up to date:
+     - `outputs/homework_reflection.md`
+     - `outputs/my_project_definition.md`
    - Commit and push to your repository
-   - Submit according to course instructions
+   - Submit both files to Canvas
 
 ---
 
@@ -537,7 +533,7 @@ time.sleep(1)  # Wait 1 second between calls
 ### Getting Help
 
 1. **Check notebook comments**: Solutions often in code comments
-2. **Review setup guides**: See `docs/` folder for detailed guides
+2. **Review repository guidance**: Re-check notebook markdown instructions and `README.md`
 3. **Search Discord**: Your issue may already be solved
 4. **Ask in Discord**: Post in #support-and-question channel
 5. **Office hours**: Attend Scott's TA office hour (OH) for live troubleshooting (not guarantee, you will have a lot to discuss in the OH)
@@ -745,7 +741,7 @@ Post question or answer in Discord `support-and-questions` channel
 ### Support Channels (in order of preference)
 
 1. **Notebook Comments:** Check inline comments and markdown cells first
-2. **Setup Guides:** Review `docs/` folder for detailed setup instructions
+2. **Repository Guide:** Re-check `README.md` and notebook markdown instructions
 3. **Discord - Search:** Your question may already be answered
 4. **Discord - Ask:** Post in `#support-and-discussions` channel
    - Include error messages and screenshots
@@ -841,16 +837,11 @@ Special thanks to contributors who helped refine this assignment.
 - **v1.1** (July 21, 2025) - Updated for IDE-based workflow with pre-configured notebook
 - **v1.0** (July 14, 2025) - Initial release
 
-### Changelog
-See `CHANGELOG.md` for detailed version history and updates.
-
----
-
 ## 🎬 Next Steps
 
 **After completing this assignment:**
 
-1. ✅ Submit all deliverables in `outputs/` directory
+1. ✅ Submit `outputs/homework_reflection.md` and `outputs/my_project_definition.md` to Canvas
 2. ✅ Share your project idea in Discord `#project-ideas` channel
 3. 📖 Read Week 2 materials on "LLM Architecture & Training Lifecycle"
 4. 🔬 Continue experimenting with your agent prototype
@@ -858,6 +849,6 @@ See `CHANGELOG.md` for detailed version history and updates.
 
 ---
 
-**Ready to start? Open `notebook` folder in your preferred IDE and begin!** 
+**Ready to start? Open the `notebooks/` folder in your preferred IDE and begin!** 
 
 *Questions? Check FAQ above or ask in Discord #support-discussions* 
